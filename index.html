@@ -1,1 +1,391 @@
-coucou teste de concefa"bg"abzebz
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Louis DE MAGALHAES MOURA - Alternance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --neon-green: #00ff41;
+            --dark-bg: #0d1117;
+            --sidebar-bg: #0d1117;
+            --main-bg: #161b22;
+            --text-main: #c9d1d9;
+            --card-bg: #1c2128;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .neon-text { color: var(--neon-green); text-shadow: 0 0 5px rgba(0, 255, 65, 0.3); }
+
+        /* Grille Globale */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 32% 68%;
+        }
+
+        @page { size: A4; margin: 0; }
+
+        @media print {
+            body { margin: 0; padding: 0; background-color: #0d1117 !important; }
+            .no-print { display: none !important; }
+            .page-container {
+                width: 210mm !important;
+                min-height: 297mm !important;
+                margin: 0 auto !important;
+                border: none !important;
+                box-shadow: none !important;
+                overflow: visible !important;
+            }
+            .cv-grid {
+                display: grid !important;
+                grid-template-columns: 32% 68% !important;
+                height: 100% !important;
+            }
+            .main-grid {
+                min-height: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-800 min-h-screen flex flex-col items-center justify-center p-4 print:p-0 print:block">
+
+    <!-- BOUTON D'AIDE -->
+    <div class="no-print fixed top-0 left-0 w-full bg-gray-900/95 text-white p-4 z-50 flex flex-col items-center justify-center border-b border-green-500 shadow-xl">
+        <button onclick="window.print()" class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-6 rounded-lg shadow-lg border border-white transition mb-2">
+            <i class="fas fa-print mr-2"></i> IMPRIMER LE CV
+        </button>
+        <p class="text-xs text-gray-300">
+            <strong>Important :</strong> Choisissez Marges: "Aucune" et cochez "Graphiques d'arrière-plan".
+        </p>
+    </div>
+
+    <div class="h-28 no-print"></div>
+
+    <div class="page-container w-[210mm] min-h-[297mm] bg-[#0d1117] relative text-sm mx-auto shadow-2xl flex flex-col">
+        
+        <div class="h-2 w-full bg-gradient-to-r from-green-700 via-green-500 to-green-700 flex-shrink-0"></div>
+
+        <!-- En-tête UNIFIÉ COMPACTÉ -->
+        <header class="cv-grid border-b border-gray-700 bg-[#161b22] flex-shrink-0">
+            
+            <!-- COLONNE GAUCHE (Plus compacte) -->
+            <div class="p-4 flex flex-col items-center justify-center h-full gap-4">
+                
+                <!-- Photo -->
+                <div class="w-full flex justify-center">
+                    <div class="w-24 h-24 rounded-full border-2 border-green-500 overflow-hidden shadow-[0_0_15px_rgba(0,255,65,0.3)] bg-gray-800 flex items-center justify-center relative group flex-shrink-0">
+                        <img src="C:\Users\avent\OneDrive\Administration\CV\CV_alternance\photo_CV.jpg" alt="Photo de profil" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
+                            <i class="fas fa-user text-3xl text-gray-600/50"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contacts -->
+                <div class="w-full flex flex-col gap-2 font-mono text-gray-400 pl-1">
+                    <div class="flex items-center group hover:text-green-400 transition cursor-pointer">
+                        <div class="w-4 flex justify-center mr-3"><i class="fas fa-envelope text-green-600"></i></div>
+                        <span class="whitespace-nowrap text-[10px]">louis.demagalhaesmoura@gmail.com</span>
+                    </div>
+                    <div class="flex items-center group hover:text-green-400 transition cursor-pointer">
+                        <div class="w-4 flex justify-center mr-3"><i class="fas fa-phone text-green-600"></i></div>
+                        <span class="text-xs">06 68 63 83 98</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-4 flex justify-center mr-3"><i class="fas fa-map-marker-alt text-green-600"></i></div>
+                        <span class="text-xs">37300 Joué-lès-Tours</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-4 flex justify-center mr-3"><i class="fas fa-car text-green-600"></i></div>
+                        <span class="text-xs">Permis B - Véhiculé</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLONNE DROITE (Plus compacte) -->
+            <div class="p-4 pt-4 flex flex-col justify-start">
+                <h1 class="text-3xl font-extrabold text-white tracking-tight uppercase leading-none">
+                    LOUIS <span class="neon-text">DE MAGALHAES MOURA</span>
+                </h1>
+                
+                <h2 class="text-sm mt-1 font-mono text-gray-400">
+                    <span class="text-green-500">></span> Étudiant en Développement Web
+                </h2>
+                
+                <div class="mt-3 inline-flex items-center bg-green-900/20 border border-green-500/50 rounded px-3 py-1.5 self-start">
+                    <p class="font-mono text-green-400 text-xs font-bold">
+                        <i class="fas fa-terminal mr-2"></i>
+                        Recherche d'alternance : Septembre 2026
+                    </p>
+                </div>
+
+                <!-- Profil -->
+                <div class="mt-3 border-l-2 border-gray-600 pl-4 w-full">
+                    <span class="font-bold text-white text-xs block mb-1 uppercase tracking-wider">PROFIL :</span>
+                    <p class="text-[11px] text-gray-400 leading-relaxed text-justify">
+                        Passionné par le code, j'adore apprendre des langages de programmations pour créer. Je n'ai pas peur de coder, d'apprendre chaque jour et de me consacrer entièrement à un seul et même projet. Je suis capable de travailler de façon autonome sur de nombreux langages et d'en apprendre de nouveaux. Destiné à passer un Master, je suis prêt à faire de ma carrière le développement informatique.
+                    </p>
+                </div>
+            </div>
+            
+        </header>
+
+        <!-- Contenu Principal -->
+        <div class="cv-grid flex-grow main-grid">
+            
+            <!-- Colonne Gauche -->
+            <aside class="bg-[#0d1117] p-4 border-r border-gray-700 flex flex-col justify-start gap-4 h-full py-4">
+                
+                <!-- TECH SKILLS -->
+                <div>
+                    <h3 class="font-mono text-base font-bold text-white mb-2 border-l-4 border-green-500 pl-3 uppercase">Tech Skills</h3>
+                    <div class="space-y-3">
+                        
+                        <!-- Front-End & Back-End (FUSIONNÉS) -->
+                        <div>
+                            <div class="flex items-center gap-2 mb-2 border-b border-gray-800 pb-1">
+                                <i class="fas fa-laptop-code text-green-500 text-xs"></i>
+                                <span class="text-xs font-bold text-gray-300">Front-End & Back-End</span>
+                            </div>
+                            <div class="space-y-2">
+                                <!-- HTML / CSS -->
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[11px] text-gray-400 font-mono">HTML / CSS</span>
+                                    <div class="flex gap-1">
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-gray-700 rounded-sm"></div> <!-- 4/5 -->
+                                    </div>
+                                </div>
+                                <!-- PHP / SQL / Python -->
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[11px] text-gray-400 font-mono">PHP / SQL / Python</span>
+                                    <div class="flex gap-1">
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-gray-700 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-gray-700 rounded-sm"></div> <!-- 3/5 -->
+                                    </div>
+                                </div>
+                                <!-- JS / Langage C -->
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[11px] text-gray-400 font-mono">JS / Langage C</span>
+                                    <div class="flex gap-1">
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-gray-700 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-gray-700 rounded-sm"></div> <!-- 3/5 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Outils & IA -->
+                        <div>
+                            <div class="flex items-center gap-2 mb-2 border-b border-gray-800 pb-1">
+                                <i class="fas fa-tools text-green-500 text-xs"></i>
+                                <span class="text-xs font-bold text-gray-300">Outils & IA</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[11px] text-gray-400 font-mono">Git / VSCode</span>
+                                    <div class="flex gap-1">
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-gray-700 rounded-sm"></div> <!-- 4/5 -->
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[11px] text-gray-400 font-mono">Utilisation IA</span>
+                                    <div class="flex gap-1">
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-green-500 rounded-sm"></div>
+                                        <div class="w-2 h-3 bg-gray-700 rounded-sm"></div> <!-- 4/5 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="mt-3 pt-3 border-t border-gray-800 flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-[#161b22] border border-gray-700 rounded text-[10px] font-mono text-green-400">#FullStack</span>
+                        <span class="px-2 py-1 bg-[#161b22] border border-gray-700 rounded text-[10px] font-mono text-green-400">#Git</span>
+                        <span class="px-2 py-1 bg-[#161b22] border border-gray-700 rounded text-[10px] font-mono text-green-400">#VSCode</span>
+                        <span class="px-2 py-1 bg-[#161b22] border border-gray-700 rounded text-[10px] font-mono text-green-400">#CleanCode</span>
+                        <span class="px-2 py-1 bg-[#161b22] border border-gray-700 rounded text-[10px] font-mono text-green-400">#Responsive</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div>
+                    <h3 class="font-mono text-base font-bold text-white mb-2 border-l-4 border-green-500 pl-3 uppercase">Soft Skills</h3>
+                    <ul class="space-y-1 text-xs text-gray-400">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Curieux & Autonome</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Rigueur & Organisation</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Travail d'équipe</li>
+                    </ul>
+                </div>
+
+                <!-- Langues -->
+                <div>
+                    <h3 class="font-mono text-base font-bold text-white mb-2 border-l-4 border-green-500 pl-3 uppercase">Langues</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="bg-[#161b22] p-1.5 rounded border border-gray-700 text-center flex flex-col justify-center">
+                            <span class="block text-base font-bold text-white leading-none">B2</span>
+                            <span class="text-[9px] text-gray-500 uppercase font-bold mt-1">Anglais</span>
+                            <span class="block text-[8px] text-green-500/80 mt-0.5 italic">Technique</span>
+                        </div>
+                        <div class="bg-[#161b22] p-1.5 rounded border border-gray-700 text-center flex flex-col justify-center">
+                            <span class="block text-base font-bold text-white leading-none">B1</span>
+                            <span class="text-[9px] text-gray-500 uppercase font-bold mt-1">Espagnol</span>
+                            <span class="block text-[8px] text-green-500/80 mt-0.5 italic">Lu, parlé, écrit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passions -->
+                <div>
+                    <h3 class="font-mono text-base font-bold text-white mb-2 border-l-4 border-green-500 pl-3 uppercase">Passions</h3>
+                    <ul class="space-y-1 text-xs text-gray-400 font-mono">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">></span> Tennis</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">></span> Musculation</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">></span> Coder</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">></span> Apprendre de nouveaux langages</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Colonne Droite -->
+            <main class="bg-[#161b22] p-3 flex flex-col justify-start gap-2">
+                
+                <!-- Bloc Formation -->
+                <section class="bg-[#1c2128] py-2 px-3 rounded-lg border border-gray-700 shadow-lg">
+                    <h3 class="flex items-center text-lg font-bold text-white mb-1 pb-1 border-b border-gray-700">
+                        <i class="fas fa-graduation-cap text-green-500 mr-2 text-sm"></i> FORMATION ACTUELLE
+                    </h3>
+                    
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Première année du cursus ESGI</h4>
+                            <p class="text-gray-400 text-[10px] uppercase tracking-wide mt-0.5">SKOLAE Tours (ex CEFIM)</p>
+                        </div>
+                        <span class="font-mono text-green-400 text-[10px] bg-green-900/30 px-2 py-0.5 rounded">2025 - Présent</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 mt-1">
+                        <div class="bg-gray-800/50 p-1.5 rounded border border-gray-700/50">
+                            <p class="text-[10px] text-green-400 font-bold mb-0.5">Objectif du diplôme :</p>
+                            <p class="text-[11px] text-gray-300">Bachelor Développement Web (BAC +3)</p>
+                            <p class="text-[9px] text-gray-500 mt-0.5">Ambition : <span class="text-gray-300 font-bold">Master Bac +5</span></p> 
+                        </div>
+                        <div class="bg-gray-800/50 p-1.5 rounded border border-gray-700/50">
+                            <p class="text-[10px] text-green-400 font-bold mb-0.5">Modules abordés :</p>
+                            <ul class="text-[10px] text-gray-300 list-disc list-inside">
+                                <li>Algorithmie / C / JS</li>
+                                <li>HTML / CSS / PHP</li> 
+                                <li>Bases de données SQL</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- EXPÉRIENCE PROFESSIONNELLE (NOUVEAU STAGE) -->
+                <section class="bg-[#1c2128] py-2 px-3 rounded-lg border border-gray-700 shadow-lg">
+                    <h3 class="flex items-center text-lg font-bold text-white mb-1 pb-1 border-b border-gray-700">
+                        <i class="fas fa-briefcase text-green-500 mr-2 text-sm"></i> EXPÉRIENCE PROFESSIONNELLE
+                    </h3>
+                    
+                    <div class="flex justify-between items-start mb-0.5">
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Stagiaire Développement Web</h4>
+                            <p class="text-gray-400 text-[10px] uppercase tracking-wide mt-0.5">KPI Création</p>
+                        </div>
+                        <span class="font-mono text-green-400 text-[10px] bg-green-900/30 px-2 py-0.5 rounded">Avril - Juin 2026</span>
+                    </div>
+                    <ul class="mt-0.5 text-[10px] text-gray-400 space-y-0.5 list-disc list-inside marker:text-green-600">
+                        <li>Création de sites web (Front-end et Back-end).</li>
+                        <li>Maintenance et optimisation de sites web existants.</li>
+                    </ul>
+                </section>
+
+                <!-- PROJETS -->
+                <section class="bg-[#1c2128] py-2 px-3 rounded-lg border border-gray-700 shadow-lg">
+                    <h3 class="flex items-center text-lg font-bold text-white mb-1 pb-1 border-b border-gray-700">
+                        <i class="fas fa-code text-green-500 mr-2 text-sm"></i> Projets personnels et académiques
+                    </h3>
+
+                    <div class="space-y-1">
+                        <div class="group">
+                            <div class="flex justify-between items-baseline">
+                                <h4 class="text-[12px] font-bold text-white group-hover:text-green-400 transition-colors">Développement de site Web (Projets Perso et académique)</h4>
+                                <span class="font-mono text-[9px] text-green-400 whitespace-nowrap">2024 - En cours</span>
+                            </div>
+                            <ul class="mt-0.5 text-[10px] text-gray-400 space-y-0.5 list-disc list-inside marker:text-green-600">
+                                <li>Maquettage de site web.</li>
+                                <li>Création de sites dynamiques et interfaces responsive.</li>
+                                <li>Intégration d'API tierces et gestion de bases de données.</li>
+                                <li>Mise en place de systèmes d'authentification utilisateurs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Diplômes -->
+                <section class="bg-[#1c2128] py-2 px-3 rounded-lg border border-gray-700 shadow-lg mb-0">
+                    <h3 class="flex items-center text-lg font-bold text-white mb-1 pb-1 border-b border-gray-700">
+                        <i class="fas fa-certificate text-green-500 mr-2 text-sm"></i> DIPLÔMES
+                    </h3>
+                    
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-xs font-bold text-white">BACCALAURÉAT 2025 - Mention Bien</h4>
+                                <p class="text-[10px] text-gray-400">Spécialités Mathématiques & NSI</p>
+                                <p class="text-[9px] text-gray-500 italic mt-0.5">"Appréciations très positives tout au long de la scolarité."</p>
+                            </div>
+                            <span class="font-mono text-[9px] text-gray-500">2025</span>
+                        </div>
+
+                        <div class="border-t border-gray-700/50 pt-1 flex justify-between items-start">
+                            <div>
+                                <h4 class="text-xs font-bold text-white">Brevet des Collèges - Mention Très Bien</h4>
+                                <p class="text-[9px] text-gray-500 italic mt-0.5">"Parcours exemplaire marqué par le sérieux."</p>
+                            </div>
+                            <span class="font-mono text-[9px] text-gray-500">2022</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Terminal Footer -->
+                <div class="mt-0 pt-1 border-t border-gray-700 font-mono text-[9px] text-gray-600 flex justify-between">
+                    <span>Authentification: SSH-RSA-4096...OK</span>
+                    <span class="text-green-500 animate-pulse">_CURSOR_ACTIVE</span>
+                </div>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>
